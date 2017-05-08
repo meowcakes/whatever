@@ -9,10 +9,11 @@ matchedStack _ _ = Nothing
 
 popNext :: String -> Char -> Maybe String
 popNext stack next = case next of
-  '(' -> Just $ ')':stack
-  '[' -> Just $ ']':stack
-  '{' -> Just $ '}':stack
+  '(' -> match ')'
+  '[' -> match ']'
+  '{' -> match '}'
   _ -> matchedStack stack next
+  where match = Just . (:stack)
 
 isBalanced :: Maybe String -> String
 isBalanced (Just []) = "YES"
