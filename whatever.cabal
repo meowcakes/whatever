@@ -27,6 +27,7 @@ executable whatever-exe
                      , whatever
                      , containers
                      , safe
+                     , vector
   default-language:    Haskell2010
 
 test-suite whatever-test
